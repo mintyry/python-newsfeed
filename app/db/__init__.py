@@ -1,9 +1,12 @@
+# connects to database
+
 from os import getenv
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 
+# loads env variables into python script
 load_dotenv()
 
 #connect to database using env variable
