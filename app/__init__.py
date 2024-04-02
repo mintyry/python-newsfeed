@@ -9,7 +9,7 @@ def create_app(test_config=None):
         SECRET_KEY='super_secret_key'
     )
 
-    # decorator; turns hell fn into a route
+    # decorator; turns hello fn into a route
     @app.route('/hello')
     # make inner function hello()
     def hello():
