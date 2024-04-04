@@ -3,6 +3,9 @@ from app.db import Base
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 
+user = relationship('User')
+
+# making post model
 class Post(Base):
     __tablename__ = 'posts'
     id = Column(Integer, primary_key=True)
