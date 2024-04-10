@@ -34,3 +34,10 @@ class User(Base):
 
 # validate_password() now returns an encrypted password if assert doesnt throw an error
     return bcrypt.hashpw(password.encode('utf-8'), salt)
+  
+  # uses checkpw() method to compare incoming pw (the one in parameter) to the one saved on User obj (self.password)
+  def verify_password(self, password):
+    return bcrypt.checkpw(
+      password.encode('utf-8'),
+      self.password.encode('utf-8')
+    )
