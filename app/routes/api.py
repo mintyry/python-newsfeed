@@ -134,3 +134,40 @@ def create():
           return jsonify(message = 'Post failed'), 500
      
      return jsonify( id = newPost.id )
+
+@bp.route('/posts', methods=['PUT'])
+# pass id in, will get from param
+def update(id):
+     data = request.get_json()
+     db = get_db()
+
+     try:
+        #   retrieve post, update title property
+          updatedPost = db.query(Post).filter(Post.id == id).one()
+          updatedPost.title = data['title']
+          db.commit()
+     except:
+          print(sys.exc_info()[0])
+
+          db.rollback()
+          return jsonify(message = 'Post not found'), 404
+     
+     return '', 204
+
+@bp.route('/posts', methods=['DELETE'])
+# pass id in, will get from param
+def delete(id):
+     data = request.get_json()
+     db = get_db()
+
+     try:
+        #   retrieve post, update title property
+          db.delete(db.query(Post).filter(Post.id == id).one())
+          db.commit()
+     except:
+          print(sys.exc_info()[0])
+
+          db.rollback()
+          return jsonify(message = 'Post not found'), 404
+     
+     return '', 204
