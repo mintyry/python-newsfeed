@@ -135,7 +135,7 @@ def create():
      
      return jsonify( id = newPost.id )
 
-@bp.route('/posts', methods=['PUT'])
+@bp.route('/posts/<id>', methods=['PUT'])
 # pass id in, will get from param
 def update(id):
      data = request.get_json()
@@ -154,10 +154,9 @@ def update(id):
      
      return '', 204
 
-@bp.route('/posts', methods=['DELETE'])
+@bp.route('/posts/<id>', methods=['DELETE'])
 # pass id in, will get from param
 def delete(id):
-     data = request.get_json()
      db = get_db()
 
      try:
