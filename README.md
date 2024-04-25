@@ -60,5 +60,3 @@ In order to test, please run `N/A`.
 ## Questions 📭
 
 Please enjoy my work at my GitHub, @[mintyry](https://github.com/mintyry).
-
-For any additional inquiries, please [email me](mailto:none@none.com).
