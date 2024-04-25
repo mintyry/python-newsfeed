@@ -6,6 +6,8 @@
 
 The motivation for Knew New News was to learn Python by refactoring the backend of an non-functional tech news app to use Python. This app solves the problem of making newsfeed that allows for comments and upvotes. Eat your heart out in Python, Reddit.
 
+![Python newsfeed, Knew New News](./loggedin.png)
+
 
 ## Table of Contents
 
