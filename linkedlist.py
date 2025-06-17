@@ -41,10 +41,10 @@ class LinkedList (object):
                     prev_node.set_next(this_node.get_next())
                 else:
                     # if we are in the root, then there' no prev node
-                    self.root = this_node
-                    self.size -= 1
+                    self.root = this_node.get_next()
+                self.size -= 1
                     # indicates we successfully removed the data
-                    return True
+                return True
            #if we didnt find data in current node, then advance pointer from prev node to next node and this node to next node
             else:
                 prev_node = this_node
@@ -59,8 +59,17 @@ class LinkedList (object):
             if this_node.get_data() == d:
             # finds it, return data
                 return d
-        else:
+            else:
             # doesnt find it, move on
-            this_node = this_node.get_next()
+                this_node = this_node.get_next()
         # if exits loop without finding data, return non
         return None
+
+# practice: instansiate a new list and use methods
+myList = LinkedList()
+myList.add(5)
+myList.add(8)
+myList.add(12)
+myList.remove(8)
+# print(myList.remove(12)) should print true
+# print(myList.find(5)) should print the data (5)
